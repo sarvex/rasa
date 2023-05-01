@@ -10,7 +10,7 @@ jobs:
     if: github.repository == 'RasaHQ/rasa'
     runs-on: ubuntu-latest
     steps:
-    - uses: n1hility/cancel-previous-runs@v2
+    - uses: n1hility/cancel-previous-runs@v3
       with:
         token: ${{ secrets.RASABOT_GITHUB_TOKEN }}
         workflow: 351973
