@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: rasahq/update-pr-branch@601ac3dadf708b14e7f0252d98230538235f99d9
+      - uses: rasahq/update-pr-branch@f7012036a6d5659cfbc37f180716963511e81f95
         if: github.repository == 'RasaHQ/rasa'
         with:
           token: ${{ secrets.RASABOT_AUTOMERGE_GITHUB_TOKEN }}
