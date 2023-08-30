@@ -72,7 +72,7 @@ jobs:
         if: ${{ failure() && steps.create-new-branch.conclusion == 'failure' }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_INFRASTRUCTURE_SQUAD_MONITORS_WEBHOOK_URL }}
-        uses: Ilshidur/action-slack@689ad44a9c9092315abd286d0e3a9a74d31ab78a
+        uses: Ilshidur/action-slack@b873c507a5419feb679750409eea157892053369
         with:
           args: "🚨 There was a problem with creating a new branch containing commits from the ${{ env.RELEASE_BRANCH }} release branch. Check out the Github action: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -113,7 +113,7 @@ jobs:
         if: ${{ failure() && steps.close-outdated-release-merge-prs.conclusion == 'failure'}}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_INFRASTRUCTURE_SQUAD_MONITORS_WEBHOOK_URL }}
-        uses: Ilshidur/action-slack@689ad44a9c9092315abd286d0e3a9a74d31ab78a
+        uses: Ilshidur/action-slack@b873c507a5419feb679750409eea157892053369
         with:
           args: "🚨 There was a problem with closing outdated release-merge-PRs of the ${{ env.RELEASE_BRANCH }} release branch. Check out the Github action: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }} \
                 These release-merge-PRs are currently open: https://github.com/${{ github.repository }}/pulls?q=is%3Aopen+label%3A${{ env.LABEL_TYPE }}+head%3Amerge-${{ steps.get-branch-name.outputs.release_branch }}-main"
