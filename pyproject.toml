@@ -153,7 +153,7 @@ structlog = "^23.1.0"
 structlog-sentry = "^2.0.2"
 # pin dnspython to avoid dependency incompatibility
 # in order to fix https://rasahq.atlassian.net/browse/ATO-1419
-dnspython = "2.3.0"
+dnspython = "2.6.1"
 wheel = ">=0.38.1"
 certifi = ">=2023.7.22"
 cryptography = ">=41.0.2"
